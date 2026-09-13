@@ -4,7 +4,7 @@ net_connect = ConnectHandler(
     device_type = "cisco_ios",
     ip = "192.168.10.62",
     username = "netmikodevmilk",
-    password = "netmikoTestpassword",
+    password = 
 )
 
 globalConfig = [
@@ -42,8 +42,8 @@ globalConfig = [
     "lldp reinit 5",
     "lldp timer 5",
     #user config
-    "username genderfluidmilk secret darKm1lk12345",
-    "username netmikomilk privilege 15 secret netmikoTestpassword",
+    "username genderfluidmilk secret 
+    "username netmikomilk privilege 15 secret 
     "feature hsrp",
 ]
 
@@ -52,7 +52,7 @@ vtyConfig = [
     "ip ssh version 2",
     "ip ssh time-out 120",
     "line vty 0 2",
-    "password 7 darKm1lk12345",
+    "password 7 
     "login local",
     "transport input ssh",
     "transport output all",
@@ -65,7 +65,7 @@ consoleConfig = [
     "access-class 1 in",
     "logging synchronous",
     "login local",
-    "password 7 darKm1lk12345",
+    "password 7
     "transport output all",
 ]
 
@@ -190,7 +190,7 @@ sviConfig = [
 "ip ospf 1 area 0",
 "ip ospf cost 5",
 "ip ospf priority 255",
-"ip ospf message-digest-key 1 md5 darKm1lk12345",
+"ip ospf message-digest-key 1 md5 
 "ip ospf authentication message-digest",
 "ip ospf network broadcast",
 #svi1000 Interface Config
