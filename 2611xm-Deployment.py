@@ -4,7 +4,7 @@ net_connect = ConnectHandler(
     device_type ="cisco_ios_telnet",
     ip = "192.168.10.61",
     username = "netmikodevmilk",
-    password = "netmikoTestpassword",
+    password = 
 )
 
 globalConfig = [
@@ -30,13 +30,13 @@ globalConfig = [
     "cdp timer 30",
     "cdp holdtime 120",
     #user config
-    "username bridgemilk secret darKm1lk12345",
-    "username netmikomilk privilege 15 secret netmikoTestpassword"
+    "username bridgemilk secret 
+    "username netmikomilk privilege 15 secret 
 ]
 
 vtyConfig = [
     "line vty 0 2",
-    "password 7 darKm1lk12345",
+    "password 7 
     "login local",
     "transport input telnet",
     "transport output all",
@@ -49,7 +49,7 @@ consoleConfig = [
     "access-class 1 in",
     "logging synchronous",
     "login local",
-    "password 7 darKm1lk12345",
+    "password 7 
     "transport output all",
 ]
 
@@ -154,7 +154,7 @@ dot1QConfig = [
 "ip ospf cost 5",
 "ip ospf priority 253",
 "ip ospf network broadcast",
-"ip ospf message-digest-key 1 md5 darKm1lk12345",
+"ip ospf message-digest-key 1 md5 
 "ip ospf authentication message-digest",
 #dot1q1000 Interface Config
 "interface fa0/0.1000",
