@@ -4,7 +4,7 @@ net_connect = ConnectHandler(
     device_type ="cisco_ios_telnet",
     ip = "192.168.10.61",
     username = "netmikodevmilk",
-    password = 
+    password = "netmikoTestpassword",
 )
 
 globalConfig = [
@@ -30,13 +30,14 @@ globalConfig = [
     "cdp timer 30",
     "cdp holdtime 120",
     #user config
-    "username bridgemilk secret 
-    "username netmikomilk privilege 15 secret 
+    "username bridgemilk secret darKm1lk12345",
+    "username netmikomilk privilege 15 secret netmikoTestpassword",
+    "enable secret Hellothere#2455",
 ]
 
 vtyConfig = [
     "line vty 0 2",
-    "password 7 
+    "password 7 darKm1lk12345",
     "login local",
     "transport input telnet",
     "transport output all",
@@ -49,7 +50,7 @@ consoleConfig = [
     "access-class 1 in",
     "logging synchronous",
     "login local",
-    "password 7 
+    "password 7 darKm1lk12345",
     "transport output all",
 ]
 
@@ -154,7 +155,7 @@ dot1QConfig = [
 "ip ospf cost 5",
 "ip ospf priority 253",
 "ip ospf network broadcast",
-"ip ospf message-digest-key 1 md5 
+"ip ospf message-digest-key 1 md5 darKm1lk12345",
 "ip ospf authentication message-digest",
 #dot1q1000 Interface Config
 "interface fa0/0.1000",
@@ -263,104 +264,182 @@ vrrpConfig = [
     "int fa0/0.2",
     "vrrp 2 ip 172.16.2.1",
     "vrrp 2 preempt",
-    "vrrp 2 priority 225",
+    "vrrp 2 priority 150",
     "vrrp 2 timers advertise 5",
     "vrrp 2 timers learn",
 #vlan3Standby
     "int fa0/0.3",
     "vrrp 3 ip 172.16.3.1",
     "vrrp 3 preempt",
-    "vrrp 3 priority 225",
+    "vrrp 3 priority 150",
     "vrrp 3 timers advertise 5",
     "vrrp 3 timers learn",
 #vlan4Standby
     "int fa0/0.4",
     "vrrp 4 ip 172.16.4.1",
     "vrrp 4 preempt",
-    "vrrp 4 priority 225",
+    "vrrp 4 priority 150",
     "vrrp 4 timers advertise 5",
     "vrrp 4 timers learn",
 #vlan5Standby
     "int fa0/0.5",
     "vrrp 5 ip 172.16.5.1",
     "vrrp 5 preempt",
-    "vrrp 5 priority 225",
+    "vrrp 5 priority 150",
     "vrrp 5 timers advertise 5",
     "vrrp 5 timers learn",
 #vlan10Standby
     "interface fa0/0.10",
     "vrrp 10 ip 172.16.10.1",
     "vrrp 10 preempt",
-    "vrrp 10 priority 225",
+    "vrrp 10 priority 150",
     "vrrp 10 timers advertise 5",
     "vrrp 10 timers learn",
 #vlan20Standby
     "interface fa0/0.20",
     "vrrp 20 ip 172.16.20.1",
     "vrrp 20 preempt",
-    "vrrp 20 priority 225",
+    "vrrp 20 priority 150",
     "vrrp 20 timers advertise 5",
     "vrrp 20 timers learn",
 #vlan30Standby
     "interface fa0/0.30",
     "vrrp 30 ip 172.16.30.1",
     "vrrp 30 preempt",
-    "vrrp 30 priority 225",
+    "vrrp 30 priority 150",
     "vrrp 30 timers advertise 5",
     "vrrp 30 timers learn",
 #vlan50Standby
     "int fa0/0.50",
     "vrrp 50 ip 172.16.50.1",
     "vrrp 50 preempt",
-    "vrrp 50 priority 225",
+    "vrrp 50 priority 150",
     "vrrp 50 timers advertise 5",
     "vrrp 50 timers learn",
 #vlan51Standby
     "int fa0/0.51",
     "vrrp 51 ip 172.16.51.1",
     "vrrp 51 preempt",
-    "vrrp 51 priority 225",
+    "vrrp 51 priority 150",
     "vrrp 51 timers advertise 5",
     "vrrp 51 timers learn",
 #vlan55Standby
     "int fa0/0.55",
     "vrrp 55 ip 172.16.55.1",
     "vrrp 55 preempt",
-    "vrrp 55 priority 225",
+    "vrrp 55 priority 150",
     "vrrp 55 timers advertise 5",
     "vrrp 55 timers learn",
 #vlan99Standby
     "int fa0/0.99",
     "vrrp 99 ip 172.16.99.1",
     "vrrp 99 preempt",
-    "vrrp 99 priority 225",
+    "vrrp 99 priority 150",
     "vrrp 99 timers advertise 5",
     "vrrp 99 timers learn",
 #vlan100Standby
     "interface fa0/0.100",
     "vrrp 100 ip 172.16.100.1",
     "vrrp 100 preempt",
-    "vrrp 100 priority 225",
+    "vrrp 100 priority 150",
     "vrrp 100 timers advertise 5",
     "vrrp 100 timers learn",
 #vlan255Standby
     "interface fa0/0.255",
     "vrrp 255 ip 10.250.250.1",
     "vrrp 255 preempt",
-    "vrrp 255 priority 225",
+    "vrrp 255 priority 150",
     "vrrp 255 timers advertise 5",
     "vrrp 255 timers learn",
 #vlan1000Standby
     "interface fa0/0.1000",
     "vrrp 254 ip 192.168.10.1",
     "vrrp 254 preempt",
-    "vrrp 254 priority 225",
+    "vrrp 254 priority 150",
     "vrrp 254 timers advertise 5",
     "vrrp 254 timers learn",
 ]
 
 httpServerConfig = [
     "no ip http server",
+]
+
+dhcpPoolConfig = [
+    "ip dhcp excluded-address 172.16.2.1 172.16.2.2","ip dhcp excluded-address 172.16.5.1 172.16.5.15","ip dhcp excluded-address 172.16.10.1 172.16.10.2","ip dhcp excluded-address 172.16.30.1 172.16.30.14","ip dhcp excluded-address 10.0.100.1 10.0.100.2", "ip dhcp excluded-address 192.168.10.1 192.168.10.31",
+    "ip dhcp pool ctNetPool",
+    "network 192.168.10.0 255.255.255.192",
+    "default-router 192.168.10.1",
+    "dns-server 192.168.10.11 192.168.10.12 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "domain-name home.local",
+    "lease 7 0 0",
+    "ip dhcp pool serverNetPool",
+    "network 172.16.2.0 255.255.255.0",
+    "default-router 172.16.2.1",
+    "dns-server 192.168.10.11 192.168.10.12 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "domain-name home.local",
+    "lease 7 0 0",
+    "ip dhcp pool wirelessPool",
+    "network 172.16.5.0 255.255.255.224",
+    "default-router 172.16.5.1",
+    "dns-server 192.168.10.11 192.168.10.12 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "domain-name home.local",
+    "lease 7 0 0",
+    "ip dhcp pool serverNetPool",
+    "network 172.16.30.0 255.255.255.240",
+    "default-router 172.16.30.1",
+    "dns-server 192.168.10.11 192.168.10.12 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "domain-name home.local",
+    "lease 7 0 0",
+    "ip dhcp pool ctHomeSwitchStatic",
+    "host 192.168.10.2 255.255.255.192",
+    "client-identifier 01540.77D2.2CC.1B",
+    "reserved-only",
+    "ip dhcp pool TCoJEthStatic",
+    "host 192.168.10.4 255.255.255.192",
+    "client-identifier 0110.FFE0.386C.66",
+    "reserved-only",
+    "ip dhcp pool CTLapEthStatic",
+    "host 192.168.10.6 255.255.255.192",
+    "client-identifier 0100.D861.e64d.10",
+    "reserved-only",
+    "ip dhcp pool testVMStatic",
+    "host 172.16.2.2 255.255.255.0",
+    "dns-server 192.168.10.11 192.168.10.12 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "client-identifier 01f4.4dad.0507.34",
+    "ip dhcp pool sunshineStreamingPoolStatic",
+    "host 172.16.3.2 255.255.255.240",
+    "dns-server 192.168.10.11 192.168.10.12 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "client-identifier 0100.0EC6.C8B2.9C",
+    "ip dhcp pool TCoJWirelessStatic",
+    "host 192.168.10.5 255.255.255.192",
+    "client-identifier 0128.D043.5745.78",
+    "reserved-only",
+    "ip dhcp pool CTLapWirelessStatic",
+    "host 192.168.10.7 255.255.255.192", 
+    "client-identifier 0140.ec99.ca95.ae",
+    "reserved-only",
+    "ip dhcp pool CTAndroidStatic",
+    "host 192.168.10.10 255.255.255.192",
+    "client-identifier 0106.4979.a198.e3",
+    "reserved-only",
+    "ip dhcp pool CTLoyolaSurfaceStatic",
+    "192.168.10.13 255.255.255.192",
+    "client-identifier 015e.823c.7b3e.9f",
+    "reserved-only",
+    "ip dhcp pool CTCollegeLaptop",
+    "192.168.10.14 255.255.255.192",
+    "client-identifier 0128.7b11.eebc.cc",
+    "reserved-only",
+    "ip dhcp pool personalVMStatic",
+    "host 172.16.10.2 255.255.255.224",
+    "dns-server 192.168.10.11 192.168.10.12 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "client-identifier 0100.0ec6.c8b2.9c",
+    "ip dhcp pool piholeNATStatic",
+    "host 10.50.50.2 255.255.255.0",
+    "default-router 10.50.50.1",
+    "dns-server 10.50.50.2 192.168.1.10 192.168.1.11 9.9.9.9 149.112.112.112 1.1.1.1",
+    "client-identifier 01d8.3add.d5e4.6d",
+    "exit",
 ]
 
 dhcpToolConfig = [
@@ -403,7 +482,7 @@ natConfig = [
 ]
 
 #upload config sets to 2611xm router
-ciscoCLI = [globalConfig, vtyConfig, consoleConfig, physicalInterfaceConfig, dot1QConfig, loopbackIntConfig, ospfConfig, ripConfig, aclConfig, vrrpConfig, httpServerConfig, dhcpToolConfig, natConfig]
+ciscoCLI = [globalConfig, vtyConfig, consoleConfig, physicalInterfaceConfig, dot1QConfig, loopbackIntConfig, ospfConfig, ripConfig, aclConfig, vrrpConfig, httpServerConfig, dhcpPoolConfig, dhcpToolConfig, natConfig]
 for config in ciscoCLI:
     sendCLI = net_connect.send_config_set(config)
     print(sendCLI)
