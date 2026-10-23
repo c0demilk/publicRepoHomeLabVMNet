@@ -45,6 +45,7 @@ globalConfig = [
     "username genderfluidmilk secret darKm1lk12345",
     "username netmikomilk privilege 15 secret netmikoTestpassword",
     "feature hsrp",
+    "ip route 0.0.0.0 0.0.0.0 192.168.10.60 2 name fallbackInternetRoute", #in static route environment must manually change AD value to 1 to update
 ]
 
 vtyConfig = [
@@ -190,7 +191,7 @@ sviConfig = [
 "ip ospf 1 area 0",
 "ip ospf cost 5",
 "ip ospf priority 255",
-"ip ospf message-digest-key 1 md5 darKm1lk12345",
+"ip ospf message-digest-key 1 md5 darKm1lk",
 "ip ospf authentication message-digest",
 "ip ospf network broadcast",
 #svi1000 Interface Config
@@ -638,7 +639,39 @@ arpInspectionConfig = [
 "ip arp inspection trust",
 ]
 
-ciscoCLI = [globalConfig, vtyConfig, consoleConfig, vlanConfig, sviConfig, accessInterfaceConfig, clientVLANConfig, otherVLANConfig, natEgressInterfaceConfig, lacpConfig, mstConfig, loopbackIntConfig, ospfConfig, ripConfig, aclConfig, vrrpConfig, httpServerConfig, dhcpToolConfig, arpInspectionConfig]
+logLevel = ["emergencies", "alerts", "critical", "errors", "warnings", "notifications", "informational", "debugging"] 
+
+syslogConfig = [
+"logging on",
+"logging monitor notifications",
+"logging console debugging",
+"logging trap informational",
+"logging buffered informational",
+"logging reload debugging",
+"logging source-interface vlan 1000",
+"logging host 192.168.10.15",
+"logging rate-limit all 1000",
+"logging buffered 12884 informational",
+"logging message-counter syslog",
+"logging message-counter log",
+"logging message-counter debug",
+"logging userinfo",
+"service timestamps log datetime",
+"service timestamps debug datetime",
+]
+
+for level in logLevel:
+    print("logging history " + (level))
+
+
+
+ntpConfig = [
+"ntp server 162.159.200.123 source vlan1000 version 4 burst iburst",
+"ntp server 162.159.200.1 source vlan1000 version 4 burst iburst",
+"ntp peer 10.250.250.3 source vlan1000 prefer burst iburst",
+]
+
+ciscoCLI = [globalConfig, vtyConfig, consoleConfig, vlanConfig, sviConfig, accessInterfaceConfig, clientVLANConfig, otherVLANConfig, natEgressInterfaceConfig, lacpConfig, mstConfig, loopbackIntConfig, ospfConfig, ripConfig, aclConfig, vrrpConfig, httpServerConfig, dhcpToolConfig, arpInspectionConfig, syslogConfig, ntpConfig]
 for config in ciscoCLI:
     sendCLI = net_connect.send_config_set(config)
     print(sendCLI)
